@@ -1,7 +1,7 @@
 import React from 'react';
 import './../styles/Skills.css';
 
-function Skills({ skills, currentSkill, onSkillChange, onAdd }) {
+function Skills({ skills, currentSkill, onSkillChange, onAdd, onDelete }) {
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       e.preventDefault();
@@ -26,6 +26,7 @@ function Skills({ skills, currentSkill, onSkillChange, onAdd }) {
         {skills.map((s, index) => (
           <span key={index} className="skill-tag">
             {s}
+            <button onClick={() => onDelete(index)}>x</button>
           </span>
         ))}
       </div>

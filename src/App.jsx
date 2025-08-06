@@ -74,6 +74,12 @@ function App() {
     ]);
   };
 
+  const handleDeleteEducation = (index) => {
+    const list = [...education];
+    list.splice(index, 1);
+    setEducation(list);
+  };
+
   const handleExperienceChange = (e, index) => {
     const { name, value } = e.target;
     const list = [...experience];
@@ -88,11 +94,23 @@ function App() {
     ]);
   };
 
+  const handleDeleteExperience = (index) => {
+    const list = [...experience];
+    list.splice(index, 1);
+    setExperience(list);
+  };
+
   const handleAddSkill = () => {
     if (currentSkill.trim() !== '') {
       setSkills([...skills, currentSkill]);
       setCurrentSkill('');
     }
+  };
+
+  const handleDeleteSkill = (index) => {
+    const list = [...skills];
+    list.splice(index, 1);
+    setSkills(list);
   };
 
   return (
@@ -107,17 +125,20 @@ function App() {
           education={education}
           onChange={handleEducationChange}
           onAdd={handleAddEducation}
+          onDelete={handleDeleteEducation}
         />
         <Experience
           experience={experience}
           onChange={handleExperienceChange}
           onAdd={handleAddExperience}
+          onDelete={handleDeleteExperience}
         />
         <Skills
           skills={skills}
           currentSkill={currentSkill}
           onSkillChange={(e) => setCurrentSkill(e.target.value)}
           onAdd={handleAddSkill}
+          onDelete={handleDeleteSkill}
         />
         <button onClick={handleDownload}>Download CV as PDF</button>
       </div>
