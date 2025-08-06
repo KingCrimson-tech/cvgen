@@ -32,8 +32,25 @@ function App() {
       const imgData = canvas.toDataURL('image/png');
       const pdf = new jsPDF('p', 'mm', 'a4');
       const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
-      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+      const imgWidth = canvas.width;
+      const imgHeight = canvas.height;
+      const ratio = imgWidth / imgHeight;
+      const pdfImageWidth = pdfWidth;
+      const pdfImageHeight = pdfImageWidth / ratio;
+
+      let heightLeft = pdfImageHeight;
+      let position = 0;
+
+      pdf.addImage(imgData, 'PNG', 0, position, pdfImageWidth, pdfImageHeight);
+      heightLeft -= pdfHeight;
+
+      while (heightLeft > 0) {
+        position = heightLeft - pdfImageHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, 'PNG', 0, position, pdfImageWidth, pdfImageHeight);
+        heightLeft -= pdfHeight;
+      }
       pdf.save('cv.pdf');
     });
   };
