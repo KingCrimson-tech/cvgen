@@ -1,0 +1,15 @@
+.App {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.cv-form {
+  width: 45%;
+}
+
+.cv-preview {
+  width: 45%;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
