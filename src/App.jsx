@@ -25,6 +25,7 @@ function App() {
 
   const cvPreviewRef = useRef();
 
+  //Stackoverflow goes brrr
   const handleDownload = () => {
     const input = cvPreviewRef.current;
     html2canvas(input, { scale: 2 }).then((canvas) => {
