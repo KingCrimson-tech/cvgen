@@ -1,22 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './../styles/GeneralInfo.css';
 
-function GeneralInfo({ setGeneralInfo }) {
-  const [info, setInfo] = useState({
-    name: '',
-    email: '',
-    phone: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setInfo((prevInfo) => ({
-      ...prevInfo,
-      [name]: value,
-    }));
-    setGeneralInfo(info);
-  };
-
+function GeneralInfo({ generalInfo, onChange }) {
   return (
     <div className="general-info">
       <h2>General Information</h2>
@@ -25,22 +10,22 @@ function GeneralInfo({ setGeneralInfo }) {
           type="text"
           name="name"
           placeholder="Name"
-          value={info.name}
-          onChange={handleChange}
+          value={generalInfo.name}
+          onChange={onChange}
         />
         <input
           type="email"
           name="email"
           placeholder="Email"
-          value={info.email}
-          onChange={handleChange}
+          value={generalInfo.email}
+          onChange={onChange}
         />
         <input
           type="tel"
           name="phone"
           placeholder="Phone"
-          value={info.phone}
-          onChange={handleChange}
+          value={generalInfo.phone}
+          onChange={onChange}
         />
       </form>
     </div>
