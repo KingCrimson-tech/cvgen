@@ -1,0 +1,87 @@
+/* src/styles/CVPreview.css */
+.cv-preview {
+  background: linear-gradient(to bottom right, #ffffff, #f7f9fc);
+  border-left: 1px solid #eef2f7;
+  color: #484848;
+  line-height: 1.8;
+}
+
+.general-info-preview {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.general-info-preview h2 {
+  font-size: 3em;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.general-info-preview p {
+  font-size: 1.1em;
+  color: #555;
+  margin: 4px 0;
+}
+
+.education-preview,
+.experience-preview,
+.skills-preview {
+  margin-top: 40px;
+}
+
+.education-preview h3,
+.experience-preview h3,
+.skills-preview h3 {
+  font-size: 1.8em;
+  color: #34495e;
+  border-bottom: 2px solid #5d9cec;
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.education-preview div,
+.experience-preview div {
+  margin-bottom: 25px;
+}
+
+.education-preview p,
+.experience-preview p {
+  margin: 0;
+  font-size: 1.1em;
+}
+
+.education-preview p strong,
+.experience-preview p strong {
+  color: #333;
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+.experience-preview ul {
+  padding-left: 20px;
+  margin-top: 10px;
+  list-style-type: disc;
+}
+
+.experience-preview li {
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.skills-preview .skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skills-preview .skill-tag {
+  background-color: #5d9cec;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 18px;
+  font-size: 1em;
+}
